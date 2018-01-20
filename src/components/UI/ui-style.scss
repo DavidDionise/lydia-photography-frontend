@@ -1,0 +1,160 @@
+.ui-theme-form-input-container,
+.ui-theme-form-textarea-container {
+  .ui-theme-input-wrap {
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 13px;
+    margin-bottom: 65px;
+  }
+
+  .ui-theme-input-label {
+    font-family: 'PT Sans Narrow';
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.5;
+    padding-left: 5px;
+  }
+
+  .ui-theme-input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: 'PT Sans Narrow';
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.2;
+    padding: 0 5px;
+  }
+
+  .ui-theme-input-focused {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .ui-theme-input-focused::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    background: #445b7f;
+  }
+
+  .ui-theme-input:focus + .ui-theme-input-focused::before {
+    width: 100%;
+  }
+}
+
+.ui-theme-form-input-container {
+  .ui-theme-input {
+    height: 40px;
+  }
+
+  input {
+    outline: none;
+    border: none;
+  }
+
+  input:focus, textarea:focus {
+    border-color: transparent !important;
+  }
+}
+
+.ui-theme-form-textarea-container {
+  .ui-theme-input {
+    height: 110px;
+    padding-top: 9px;
+    padding-bottom: 13px;
+  }
+
+  textarea {
+    outline: none;
+    border: none;
+    overflow: auto;
+    resize: vertical;
+  }
+
+  input:focus, textarea:focus {
+    border-color: transparent !important;
+  }
+}
+
+.ui-theme-button-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+
+  .ui-theme-button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #ff4b5a;
+    border-radius: 25px;
+    font-family: 'PT Sans Narrow';
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  }
+
+  .ui-theme-button:hover {
+    background-color: #333333;
+    box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  }
+
+  .ui-theme-button:hover i {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+  }
+
+  i {
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin-left: 7px;
+  }
+}
