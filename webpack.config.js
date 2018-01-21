@@ -58,7 +58,8 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       NODE_ENV: `'development'`,
-      API_URL: `'http://localhost:3000'`
+      API_URL: `'http://localhost:3000'`,
+      INSTAGRAM_URL: `'https://www.instagram.com/lydia.cournoyer/?hl=en'`
     })
   ],
 };

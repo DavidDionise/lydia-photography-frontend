@@ -4,9 +4,13 @@ class HomePageIcons extends React.Component {
   render() {
     return (
       <div className='homepage-icons-container'>
-        <i className='fa fa-instagram' />
-        <i className='fa fa-facebook' />
-        <i className='fa fa-envelope' />
+        <a
+          href={INSTAGRAM_URL}
+          target='_blank'
+          style={{ color: 'white' }}
+          >
+          <i className='fa fa-instagram'/>
+        </a>
       </div>
     );
   }
