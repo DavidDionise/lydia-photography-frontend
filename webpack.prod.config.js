@@ -47,7 +47,7 @@ const config = {
     new UglifyJSPlugin(),
 		new webpack.DefinePlugin({
       NODE_ENV: `'production'`,
-			API_URL: `'http://174.138.32.26:3000'`
+			API_URL: `'http://174.138.32.26:3000'`,
 			INSTAGRAM_URL: `'https://www.instagram.com/lydia.cournoyer/?hl=en'`
     })
 	],
