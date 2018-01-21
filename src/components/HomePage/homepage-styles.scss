@@ -9,12 +9,19 @@ body {
   bottom: 0px;
   right: 0px;
   left: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #586f93;
-  color: white;
+  background-color: white;
+  text-align: center;
+  padding-top: 100px;
+  opacity: 1;
+  transition: opacity 2s;
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+.homepage-spinner-container.hide {
+  opacity: 0;
 }
 
 .homepage-container {

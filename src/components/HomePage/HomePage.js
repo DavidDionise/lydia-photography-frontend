@@ -31,10 +31,7 @@ class HomePage extends React.Component {
       this.setState({ current_img_idx: idx, dark_text: this.image_data[idx].dark_text });
     }, 4500);
 
-    $('.load-trigger').on('load', () => {
-      console.log('hit');
-      this.setState({ loading: false })
-    });
+    $('.load-trigger').on('load', () => this.setState({ loading: false }));
   }
 
   render() {
@@ -54,12 +51,10 @@ class HomePage extends React.Component {
           </div>
           );
         })}
-        {this.state.loading ? (
-          <div className='homepage-spinner-container'>
-            <Spinner color='white' />
-            <p>Loading ...</p>
-          </div>
-        ) : null}
+        <div className={`homepage-spinner-container ${!this.state.loading ? 'hide' : ''}`}>
+          <Spinner color='black' />
+          <p>Loading Photos ...</p>
+        </div>
       </div>
     );
   }
