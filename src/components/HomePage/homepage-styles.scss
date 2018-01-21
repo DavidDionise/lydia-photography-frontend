@@ -79,6 +79,12 @@ body {
         h1 {
           font-size: 95px;
         }
+
+        @media screen and (max-width: 660px) {
+          h1 {
+            font-size: 60px;
+          }
+        }
       }
 
       .lifestyle-photographer-container {
