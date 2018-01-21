@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomePageText } from 'components';
+import { HomePageText, Spinner } from 'components';
 import './homepage-styles.scss';
 
 const base_url = 'assets/images';
@@ -10,7 +10,8 @@ class HomePage extends React.Component {
 
     this.state = {
       current_img_idx: 0,
-      dark_text: false
+      dark_text: false,
+      loading: true
     }
 
     this.image_data = [
@@ -29,6 +30,11 @@ class HomePage extends React.Component {
       const idx = current_img_idx == this.image_data.length - 1 ? 0 : current_img_idx + 1;
       this.setState({ current_img_idx: idx, dark_text: this.image_data[idx].dark_text });
     }, 4500);
+
+    $('.load-trigger').on('load', () => {
+      console.log('hit');
+      this.setState({ loading: false })
+    });
   }
 
   render() {
@@ -37,14 +43,23 @@ class HomePage extends React.Component {
         <HomePageText dark_text={this.state.dark_text} />
         {this.image_data.map((image, idx) => {
           return (
-            <div className={`homepage-image-container ${image.position}`} key={image.path}>
+            <div
+              className={`homepage-image-container ${image.position}`}
+              key={image.path}
+              >
               <img
                 src={image.path}
-                className={`homepage-image ${this.state.current_img_idx == idx ? 'show' : ''}`}
+                className={`homepage-image ${this.state.current_img_idx == idx ? 'show' : ''} ${idx == 0 ? 'load-trigger' : ''}`}
               />
           </div>
           );
         })}
+        {this.state.loading ? (
+          <div className='homepage-spinner-container'>
+            <Spinner color='white' />
+            <p>Loading ...</p>
+          </div>
+        ) : null}
       </div>
     );
   }
