@@ -8,7 +8,7 @@ const submitEmail = props => {
 
   return fetch(url, fetch_config)
   .then(res => res.json())
-  .catch(console.log);
+  .catch(e => { throw new Error(e) });
 }
 
 module.exports = submitEmail;

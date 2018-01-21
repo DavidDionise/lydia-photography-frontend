@@ -9,7 +9,7 @@ class ContactPageModal extends React.Component {
         show={this.props.show}
         onHide={this.props.onHide}
         >
-        <ContactPage />
+        <ContactPage toggleShowContactModal={this.props.toggleShowContactModal} />
       </Modal>
     );
   }

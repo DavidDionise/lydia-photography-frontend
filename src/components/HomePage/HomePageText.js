@@ -7,13 +7,13 @@ class HomePageText extends React.Component {
     super(props);
 
     this.state = {
-      show_contact_modal: false
+      show_contact_modal: false,
     };
   }
   render() {
     return (
       <div className='overlay-text-outer-container'>
-        <div className='overlay-text-inner-container'>
+        <div className={`overlay-text-inner-container ${this.props.dark_text ? 'dark' : ''}`}>
           <div className='name-container'>
             <h1><strong>LYDIACOURNOYER</strong></h1>
           </div>
@@ -31,6 +31,7 @@ class HomePageText extends React.Component {
         <ContactPageModal
           show={this.state.show_contact_modal}
           onHide={() => this.setState({ show_contact_modal: false })}
+          toggleShowContactModal={bool => this.setState({ show_contact_modal: bool })}
         />
       </div>
     );

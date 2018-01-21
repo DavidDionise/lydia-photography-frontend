@@ -109,6 +109,15 @@ body {
       }
     }
 
+    .overlay-text-inner-container.dark {
+      color: #494949;
+
+      .contact-button {
+        border: solid #494949 2px;
+        color: #494949;
+      }
+    }
+
     .homepage-icons-container {
       flex: 1;
       display: flex;

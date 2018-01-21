@@ -9,13 +9,14 @@ class HomePage extends React.Component {
     super(props);
 
     this.state = {
-      current_img_idx: 0
+      current_img_idx: 0,
+      dark_text: false
     }
 
     this.image_data = [
       { path: `${base_url}/marie-nate-cafe.jpg`, position: 'center' },
       { path: `${base_url}/marie-nate-walk.jpg`, position: 'right' },
-      { path: `${base_url}/miles-solo.jpg`, position: 'center' },
+      { path: `${base_url}/miles-solo.jpg`, position: 'center', dark_text: true },
       { path: `${base_url}/svea-solo.jpg`, position: 'center' },
       { path: `${base_url}/vj-lady.jpg`, position: 'left' }
     ];
@@ -26,14 +27,14 @@ class HomePage extends React.Component {
     this.interval_id = setInterval(() => {
       const { current_img_idx } = this.state;
       const idx = current_img_idx == this.image_data.length - 1 ? 0 : current_img_idx + 1;
-      this.setState({ current_img_idx: idx });
+      this.setState({ current_img_idx: idx, dark_text: this.image_data[idx].dark_text });
     }, 4500);
   }
 
   render() {
     return (
       <div className='homepage-container animated fadeIn'>
-        <HomePageText />
+        <HomePageText dark_text={this.state.dark_text} />
         {this.image_data.map((image, idx) => {
           return (
             <div className={`homepage-image-container ${image.position}`} key={image.path}>

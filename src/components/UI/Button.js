@@ -5,7 +5,8 @@ class Button extends React.Component {
     const {
       text,
       icon_class,
-      onClick
+      onClick,
+      children
     } = this.props;
     return (
       <div className='ui-theme-button-container' onClick={onClick}>
@@ -14,6 +15,7 @@ class Button extends React.Component {
             {text || ''}
             {icon_class ? <i className={icon_class} /> : null}
           </span>
+          {children}
         </button>
       </div>
     );
